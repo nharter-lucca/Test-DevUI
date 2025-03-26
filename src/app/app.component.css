@@ -15,6 +15,7 @@
   margin-bottom: 20px;
   border-bottom: 1px solid #e0e7f6;
 }
+
 .title {
   font-size: 24px;
   font-weight: 900;
@@ -36,9 +37,8 @@
   margin-bottom: 16px;
 }
 .filter-options {
-  display: flex;
+  flex-direction: column;
   gap: 12px;
-  align-items: center;
   color: #2a3551;
   font-size: 14px;
 }
@@ -48,6 +48,8 @@
 .filter-buttons {
   border: 1px solid #becbe4;
   border-radius: 8px;
+  display: inline-flex;
+  width: auto;
 }
 .filter-button {
   border-right: 1px solid #becbe4;
@@ -67,7 +69,6 @@
   background-color: #f1f1fe;
 }
 .search-input {
-  max-width: 360px;
   width: 100%;
 }
 
@@ -75,15 +76,34 @@
   .header {
     flex-direction: row;
     align-items: center;
+    margin-right: 40px;
   }
   .button-group {
     flex-direction: row;
   }
+
+  .filter-options {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  .filter-label {
+    display: block;
+  }
+
+  .search-input {
+    max-width: 360px;
+  }
+}
+@media (min-width: 1150px) {
   .filter-section {
     flex-direction: row;
     justify-content: space-between;
   }
-  .filter-label {
-    display: block;
+}
+
+@media (max-width: 768px) {
+  .buyer-select {
+    margin-top: 16px;
   }
 }
