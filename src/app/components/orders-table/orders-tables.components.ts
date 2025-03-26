@@ -1,5 +1,5 @@
 import { Component, input, signal } from '@angular/core';
-import { Order } from '../types/types';
+import { Order } from '../../types/types';
 import { CheckboxComponent } from '../checkbox/checkbox.component';
 import { FormsModule } from '@angular/forms';
 

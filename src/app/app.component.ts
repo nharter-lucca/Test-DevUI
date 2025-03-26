@@ -6,7 +6,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { OrdersTableComponent } from './components/orders-table/orders-tables.components';
 import { SelectComponent } from './components/select/select.component';
 import orders from './orders.json';
-import { Order } from './components/types/types';
+import { Order } from './types/types';
 
 @Component({
   selector: 'app-root',
