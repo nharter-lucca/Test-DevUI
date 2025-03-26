@@ -2,6 +2,7 @@
   <table class="orders-table">
     <thead class="orders-table-header">
       <tr class="orders-table-header-row">
+        <th class="orders-table-header-cell"></th>
         <th class="orders-table-header-cell">Numéro de commande</th>
         <th class="orders-table-header-cell">Date de commande</th>
         <th class="orders-table-header-cell">Acheteur</th>
@@ -11,7 +12,11 @@
     </thead>
     <tbody>
       @if (orders().length > 0) { @for (order of orders(); track order.id) {
-      <tr class="orders-table-row">
+      <tr class="orders-table-row" style="position: relative">
+        <div class="checkbox-container">
+          <app-checkbox></app-checkbox>
+        </div>
+
         <td class="orders-table-cell">{{ order.id }}</td>
         <td class="orders-table-cell">{{ formatDate(order.date) }}</td>
         <td class="orders-table-cell">
@@ -49,7 +54,7 @@
       </tr>
       } } @else {
       <tr>
-        <td colspan="5" class="no-orders-message">
+        <td colspan="6" class="no-orders-message">
           Aucune commande n'est disponible
         </td>
       </tr>
