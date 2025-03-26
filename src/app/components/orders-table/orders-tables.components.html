@@ -2,12 +2,14 @@
   <table class="orders-table">
     <thead class="orders-table-header">
       <tr class="orders-table-header-row">
+        @if (orders().length > 0) {
         <div class="checkbox-container">
           <app-checkbox
             [checked]="selectAll()"
             (checkedChange)="toggleSelectAll()"
           ></app-checkbox>
         </div>
+        }
         <th class="orders-table-header-cell">Numéro de commande</th>
         <th class="orders-table-header-cell">Date de commande</th>
         <th class="orders-table-header-cell">Acheteur</th>
