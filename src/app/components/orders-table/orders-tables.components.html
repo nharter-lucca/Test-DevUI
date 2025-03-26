@@ -2,7 +2,12 @@
   <table class="orders-table">
     <thead class="orders-table-header">
       <tr class="orders-table-header-row">
-        <th class="orders-table-header-cell"></th>
+        <div class="checkbox-container">
+          <app-checkbox
+            [checked]="selectAll()"
+            (checkedChange)="toggleSelectAll()"
+          ></app-checkbox>
+        </div>
         <th class="orders-table-header-cell">Numéro de commande</th>
         <th class="orders-table-header-cell">Date de commande</th>
         <th class="orders-table-header-cell">Acheteur</th>
@@ -13,10 +18,14 @@
     <tbody>
       @if (orders().length > 0) { @for (order of orders(); track order.id) {
       <tr class="orders-table-row" style="position: relative">
-        <div class="checkbox-container">
-          <app-checkbox></app-checkbox>
-        </div>
-
+        <td class="orders-table-cell">
+          <div class="checkbox-container">
+            <app-checkbox
+              [checked]="isOrderSelected(order.id)"
+              (checkedChange)="toggleOrderSelection(order.id)"
+            ></app-checkbox>
+          </div>
+        </td>
         <td class="orders-table-cell">{{ order.id }}</td>
         <td class="orders-table-cell">{{ formatDate(order.date) }}</td>
         <td class="orders-table-cell">
