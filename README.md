@@ -1,59 +1,16 @@
-# AngularTest
+## Composants Disponibles
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.4.
+- **Input Text** : Permet la saisie de texte.
+- **Select** : Menu déroulant pour sélectionner une option.
+- **Sidebar** : Navigation latérale.
+- **Orders Table** : Affichage des commandes.
 
-## Development server
+### Changement par rapport à la maquette :
 
-To start a local development server, run:
+Pour le champ de saisie, j'ai ajouté la possibilité de filtrer également par nom d'acheteur. Personnellement, j'aurais plus le réflexe de chercher dans la barre de recherche plutôt que dans le menu déroulant si je recherche par un nom de personne.
 
-```bash
-ng serve
-```
+## Pistes d'Amélioration
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- **Ajout de Variables CSS** : Gérer les couleurs de manière centralisée.
+- **Création d'un Composant Générique Table** : Ajouter des règles pour spécifier la mise en forme, comme la couleur des statuts.
+- **Gestion des Icônes par Composant** : Envisager un système de composant icône pour éviter de régénérer la librairie sur le site Icommon.
