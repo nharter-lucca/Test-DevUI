@@ -2,6 +2,7 @@
 
 - **Input Text** : Permet la saisie de texte.
 - **Select** : Menu déroulant pour sélectionner une option.
+- **Checkbox** : Permet de cocher/décocher une option.
 - **Sidebar** : Navigation latérale.
 - **Orders Table** : Affichage des commandes.
 
