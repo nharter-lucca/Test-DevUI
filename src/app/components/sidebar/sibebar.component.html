@@ -1,0 +1,65 @@
+<button
+  (click)="toggleMenu()"
+  [class]="{
+    'menu-button': true,
+    'menu-button-hover': !isMenuOpen
+  }"
+>
+  <span class="menu-line"></span>
+  <span class="menu-line"></span>
+  <span class="menu-line"></span>
+</button>
+
+@if (isMenuOpen) {
+<div class="overlay" (click)="toggleMenu()"></div>
+}
+
+<div
+  [class]="{
+    sidebar: true,
+    'sidebar-open': isMenuOpen,
+    'sidebar-closed': !isMenuOpen
+  }"
+>
+  <div>
+    <a href="https://www.lucca.fr/" class="logo-link">
+      <img src="/assets/img/logo.svg" alt="logo" />
+    </a>
+    <div class="link-container">
+      @for (link of links; track link.label) {
+      <a
+        [href]="link.href"
+        [attr.target]="link.external ? '_blank' : null"
+        class="link"
+        (click)="onMobileClick()"
+      >
+        @if (link.active) {
+        <div class="active-indicator"></div>
+        }
+        <span
+          [class]="{
+            'link-text': true,
+            'link-active': link.active,
+            'link-inactive': !link.active
+          }"
+        >
+          @if (link.icon) {
+          <i [class]="link.icon" class="icon"></i>
+          }
+          {{ link.label }}
+        </span>
+      </a>
+      }
+    </div>
+  </div>
+  <div>
+    <a
+      href="https://www.lucca.fr/"
+      class="settings-link"
+      (click)="onMobileClick()"
+    >
+      <span class="icon-settings icon"></span>
+      <span>Paramètres</span>
+    </a>
+  </div>
+</div>

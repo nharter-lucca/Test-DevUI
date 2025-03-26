@@ -1,0 +1,59 @@
+<div class="orders-table-container">
+  <table class="orders-table">
+    <thead class="orders-table-header">
+      <tr class="orders-table-header-row">
+        <th class="orders-table-header-cell">Numéro de commande</th>
+        <th class="orders-table-header-cell">Date de commande</th>
+        <th class="orders-table-header-cell">Acheteur</th>
+        <th class="orders-table-header-cell">Statut</th>
+        <th class="orders-table-header-cell">Prix</th>
+      </tr>
+    </thead>
+    <tbody>
+      @if (orders().length > 0) { @for (order of orders(); track order.id) {
+      <tr class="orders-table-row">
+        <td class="orders-table-cell">{{ order.id }}</td>
+        <td class="orders-table-cell">{{ formatDate(order.date) }}</td>
+        <td class="orders-table-cell">
+          <div class="client-info">
+            <img
+              [src]="order.client.profilePicture"
+              class="client-profile-picture"
+              alt=""
+            />
+            <div>
+              <p>{{ order.client.name }}</p>
+              <p class="client-email">{{ order.client.email }}</p>
+            </div>
+          </div>
+        </td>
+        <td class="orders-table-cell">
+          @if (order.status === 'successful-payment') {
+          <span class="status-success">
+            <i class="icon-success"></i>
+            Payée
+          </span>
+          } @else if (order.status === 'pending-payment') {
+          <span class="status-pending">
+            <i class="icon-warning"></i>
+            En attente de paiement
+          </span>
+          } @else if (order.status === 'failed-payment') {
+          <span class="status-failed">
+            <i class="icon-warning"></i>
+            Paiement échoué
+          </span>
+          }
+        </td>
+        <td class="orders-table-cell">{{ formatPrice(order.price) }}</td>
+      </tr>
+      } } @else {
+      <tr>
+        <td colspan="5" class="no-orders-message">
+          Aucune commande n'est disponible
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,54 @@
+<div class="app-container">
+  <app-sidebar />
+
+  <div class="content">
+    <div class="header">
+      <div>
+        <h1 class="title">Commandes</h1>
+        <p class="subtitle">
+          Retrouvez ici toutes les commandes passées et en cours.
+        </p>
+      </div>
+      <div class="button-group">
+        <app-button
+          icon="icon-download"
+          variant="secondary"
+          label="Télécharger"
+        />
+
+        <app-button icon="icon-add" label="Ajouter une commande" />
+      </div>
+    </div>
+    <div class="filter-section">
+      <div class="filter-options">
+        <p class="filter-label">Filtrer par :</p>
+        <div class="filter-buttons">
+          @for (filter of filters; track filter.value) {
+          <button
+            class="filter-button"
+            [class.selected]="selectedCategory() === filter.value"
+            (click)="toggleCategory(filter.value)"
+          >
+            {{ filter.label }}
+          </button>
+          }
+        </div>
+        <div class="buyer-select">
+          <app-select
+            [(value)]="selectedBuyer"
+            [options]="buyerOptions"
+            icon="icon-user"
+          />
+        </div>
+      </div>
+      <div class="search-input">
+        <app-input-text
+          [(value)]="search"
+          placeholder="Rechercher un numéro de commande ou acheteur"
+          [icon]="'icon-search'"
+        />
+      </div>
+    </div>
+    <app-orders-table [orders]="filteredOrders()" />
+  </div>
+</div>

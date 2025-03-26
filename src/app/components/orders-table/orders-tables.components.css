@@ -1,0 +1,82 @@
+.orders-table-container {
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  border: 1px solid #e0e7f6;
+}
+.orders-table {
+  width: 100%;
+}
+.orders-table-header {
+  background-color: #f3f6fc;
+}
+.orders-table-header-row {
+  border-bottom: 1px solid #e0e7f6;
+  color: #acbbd7;
+  font-size: 0.75rem;
+  text-align: left;
+}
+.orders-table-header-cell {
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+}
+.orders-table-row {
+  transition: all 0.3s;
+  border-bottom: 1px solid #e0e7f6;
+}
+.orders-table-cell {
+  padding: 0.75rem 1.25rem;
+  border-color: #e0e7f6;
+  font-weight: 400;
+  color: #2a3551;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+.client-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.client-profile-picture {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+}
+.client-email {
+  color: #667799;
+  font-size: 0.75rem;
+}
+.status-success {
+  background-color: #ccfad8;
+  color: #17cf63;
+  border-radius: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
+.status-pending {
+  background-color: #f9f5c8;
+  color: #d5c40b;
+  border-radius: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
+.status-failed {
+  background-color: #fbd5dc;
+  color: #f75f78;
+  border-radius: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
+.no-orders-message {
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  color: #acbbd7;
+}

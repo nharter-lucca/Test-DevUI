@@ -1,0 +1,89 @@
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+.content {
+  padding: 20px 24px;
+  width: 100%;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e0e7f6;
+}
+.title {
+  font-size: 24px;
+  font-weight: 900;
+  color: #131d35;
+}
+.subtitle {
+  font-size: 14px;
+  color: #445473;
+}
+.button-group {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
+.filter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.filter-options {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: #2a3551;
+  font-size: 14px;
+}
+.filter-label {
+  display: none;
+}
+.filter-buttons {
+  border: 1px solid #becbe4;
+  border-radius: 8px;
+}
+.filter-button {
+  border-right: 1px solid #becbe4;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.filter-button:last-child {
+  border-right: none;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.filter-button:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.filter-button.selected {
+  background-color: #f1f1fe;
+}
+.search-input {
+  max-width: 360px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+  }
+  .button-group {
+    flex-direction: row;
+  }
+  .filter-section {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .filter-label {
+    display: block;
+  }
+}

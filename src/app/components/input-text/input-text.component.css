@@ -1,0 +1,28 @@
+.input-container {
+  position: relative;
+}
+input {
+  width: 100%;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  border: 1px solid #acbbd7;
+  padding: 0.5rem;
+  color: #2a3551;
+  &::placeholder {
+    color: #acbbd7;
+  }
+}
+.input-with-icon {
+  padding-left: 2rem;
+}
+.input-no-icon {
+  padding-left: 0.5rem;
+}
+.icon {
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.25rem;
+  color: #667799;
+}
